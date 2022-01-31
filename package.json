@@ -1,6 +1,6 @@
 {
   "name": "movies-app",
-  "homepage": "http://movies.com",
+  "homepage": "https://veronica43.github.io/React.appmovie/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm -rf docs && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
