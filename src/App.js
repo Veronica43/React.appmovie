@@ -96,11 +96,11 @@ function App() {
     <Container>
       <Header>
         <AppName>
-          <MovieImage src="/icon.svg" />
+          <MovieImage src="/movie.png" />
           Movie App
         </AppName>
         <SearchBox>
-          <SearchIcon src="/search.svg" />
+          <SearchIcon src="/search.png" />
           <SearchInput
             placeholder="Search Movie"
             value={searchQuery}
@@ -124,7 +124,7 @@ function App() {
             />
           ))
         ) : (
-          <Placeholder src="/search.svg" />
+          <Placeholder src="/lupa.png" />
         )}
       </MovieListContainer>
     </Container>
