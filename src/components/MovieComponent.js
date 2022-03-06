@@ -4,6 +4,8 @@ import styled from "styled-components";
 const MovieContainer = styled.div`
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  background-color: black;
   padding: 10px;
   width: 280px;
   box-shadow: 0 3px 10px 0 #aaa;
@@ -12,11 +14,16 @@ const MovieContainer = styled.div`
 const CoverImage = styled.img`
   object-fit: cover;
   height: 362px;
+  &:hover {
+    box-shadow: 30px 30px 18px -8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05, 1.05);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0, 1);
+  }
 `;
 const MovieName = styled.span`
   font-size: 18px;
   font-weight: 600;
-  color: black;
+  color: #cf9c3b;
   margin: 15px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -30,7 +37,7 @@ const InfoColumn = styled.div`
 const MovieInfo = styled.span`
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: #cf9c3b;
   white-space: nowrap;
   overflow: hidden;
   text-transform: capitalize;

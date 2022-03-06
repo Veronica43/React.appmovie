@@ -3,18 +3,30 @@ import Axios from "axios";
 import styled from "styled-components";
 import MovieComponent from "./components/MovieComponent";
 import MovieInfoComponent from "./components/MovieInfoComponent";
-
+import searchIcon from "./components/search.svg";
+import carrete from "./components/carrete.jpeg";
 export const API_KEY = "887101d1";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-color: white;
 `;
 const AppName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 3rem;
+  letter-spacing: 0.9px;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 211, 180, 1) 0%,
+    rgba(249, 211, 180, 0) 150%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 `;
 const Header = styled.div`
   background-color: black;
@@ -32,7 +44,7 @@ const SearchBox = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 10px;
-  border-radius: 6px;
+  border-radius: 20px;
   margin-left: 20px;
   width: 50%;
   background-color: white;
@@ -42,8 +54,8 @@ const SearchIcon = styled.img`
   height: 32px;
 `;
 const MovieImage = styled.img`
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   margin: 15px;
 `;
 const SearchInput = styled.input`
@@ -96,11 +108,11 @@ function App() {
     <Container>
       <Header>
         <AppName>
-          <MovieImage src="/movie.png" />
+          <MovieImage src={carrete} />
           Movie App
         </AppName>
         <SearchBox>
-          <SearchIcon src="/search.png" />
+          <SearchIcon src={searchIcon} />
           <SearchInput
             placeholder="Search Movie"
             value={searchQuery}
@@ -124,7 +136,7 @@ function App() {
             />
           ))
         ) : (
-          <Placeholder src="/lupa.png" />
+          <Placeholder src={carrete} />
         )}
       </MovieListContainer>
     </Container>
