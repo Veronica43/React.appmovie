@@ -10,51 +10,21 @@ export const API_KEY = "887101d1";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+
   background-color: white;
 `;
-const AppName = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 2rem;
-  letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 150%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-`;
-const Header = styled.div`
-  background-color: black;
-  gap: 3rem;
-  display: flex;
 
-  flex-direction: row;
-  align-items: center;
-  padding: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  box-shadow: 0 3px 6px 0 #555;
-  @media screen and (max-width: 600px) {
-    .header {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-  }
-`;
 const SearchBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 10px 10px;
-  border-radius: 20px;
+  width: 80%;
+  margin: 5rem 1rem;
 
-  width: 50%;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem 1.75rem;
+  border-radius: 3rem;
+  background: #1f2123;
 `;
 const SearchIcon = styled.img`
   width: 32px;
@@ -64,19 +34,18 @@ const MovieImage = styled.img`
   width: 50px;
   height: 50px;
   margin: 15px;
-  @media screen and (max-width: 600px) {
-    .MovieImage {
-      display: none;
-    }
-  }
 `;
 const SearchInput = styled.input`
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
+  flex: 1;
   border: none;
+  font-size: 1.5rem;
+
+  font-weight: 500;
+  padding-right: 1rem;
+
   outline: none;
-  margin-left: 15px;
+  color: #a1a1a1;
+  background: #1f2123;
 `;
 const MovieListContainer = styled.div`
   display: flex;
@@ -118,20 +87,17 @@ function App() {
 
   return (
     <Container>
-      <Header>
-        <AppName>
-          <MovieImage src={carrete} />
-          Movie App
-        </AppName>
-        <SearchBox>
-          <SearchIcon src={searchIcon} />
-          <SearchInput
-            placeholder="Search Movie"
-            value={searchQuery}
-            onChange={onTextChange}
-          />
-        </SearchBox>
-      </Header>
+      <MovieImage src={carrete} />
+
+      <SearchBox>
+        <SearchIcon src={searchIcon} />
+        <SearchInput
+          placeholder="Search Movie"
+          value={searchQuery}
+          onChange={onTextChange}
+        />
+      </SearchBox>
+
       {selectedMovie && (
         <MovieInfoComponent
           selectedMovie={selectedMovie}
