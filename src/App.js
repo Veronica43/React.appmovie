@@ -16,7 +16,7 @@ const AppName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
@@ -30,22 +30,29 @@ const AppName = styled.div`
 `;
 const Header = styled.div`
   background-color: black;
-  color: white;
+  gap: 3rem;
   display: flex;
-  justify-content: space-between;
+
   flex-direction: row;
   align-items: center;
   padding: 10px;
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 3px 6px 0 #555;
+  @media screen and (max-width: 600px) {
+    .header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
 `;
 const SearchBox = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 10px;
   border-radius: 20px;
-  margin-left: 20px;
+
   width: 50%;
   background-color: white;
 `;
@@ -57,6 +64,11 @@ const MovieImage = styled.img`
   width: 50px;
   height: 50px;
   margin: 15px;
+  @media screen and (max-width: 600px) {
+    .MovieImage {
+      display: none;
+    }
+  }
 `;
 const SearchInput = styled.input`
   color: black;
